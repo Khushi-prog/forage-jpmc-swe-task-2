@@ -230,7 +230,7 @@ def run(routes, host='0.0.0.0', port=8080):
         def do_GET(self):
             get(self, routes)
 
-    server = ThreadedHTTPServer((host, port), RequestHandler)
+    server = ThreadedHTTPServer((host, 8000), RequestHandler)
     thread = threading.Thread(target=server.serve_forever)
     thread.daemon = True
     thread.start()
